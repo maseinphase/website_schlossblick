@@ -1,0 +1,443 @@
+/* ==========================================================================
+   Ferienwohnung Schlossblick - Kalender & Buchungsanfrage Styles
+   ========================================================================== */
+
+.booking-section-wrapper {
+  background: linear-gradient(180deg, var(--color-bg-alt) 0%, #ffffff 100%);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Kalender Container */
+.calendar-card {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.calendar-month-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.calendar-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cal-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all var(--transition-fast);
+}
+
+.cal-nav-btn:hover:not(:disabled) {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.cal-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Wochentage & Tage Raster */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+  background: #ffffff;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+/* Status-Klassen für Kalendertage */
+.cal-day.empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cal-day.available {
+  color: var(--color-text-main);
+  background-color: #f7faf8;
+  border-color: #e5ece7;
+}
+
+.cal-day.available:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.cal-day.booked {
+  background-color: #f3f3f3;
+  color: #a0a8a3;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.cal-day.booked::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #d9534f;
+}
+
+.cal-day.past {
+  color: #d0d5d2;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.cal-day.selected-start,
+.cal-day.selected-end {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-sm) !important;
+  transform: scale(1.02);
+  z-index: 3;
+}
+
+.cal-day.in-range {
+  background-color: var(--color-primary-light) !important;
+  color: var(--color-primary) !important;
+  border-radius: 0 !important;
+}
+
+.cal-day.today::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Kalender Legende & Sync Status */
+.calendar-footer {
+  margin-top: 1.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-free {
+  background: #eaf2ed;
+  border: 1px solid #c2d8ca;
+}
+
+.legend-booked {
+  background: #f0f0f0;
+  border: 1px solid #dcdcdc;
+  position: relative;
+}
+
+.legend-booked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  right: 2px;
+  height: 1px;
+  background: #999;
+}
+
+.legend-selected {
+  background: var(--color-primary);
+}
+
+.sync-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+}
+
+.sync-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   Buchungsanfrage-Box
+   -------------------------------------------------------------------------- */
+.inquiry-card {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 100px;
+}
+
+.inquiry-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.inquiry-price-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.inquiry-price-tag strong {
+  font-size: 2rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.inquiry-price-tag span {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.direct-booking-perk {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Zusammenfassung der Reisedaten */
+.selected-dates-bar {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border-light);
+}
+
+.dates-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.date-point span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.date-point strong {
+  font-size: 1rem;
+  color: var(--color-text-main);
+}
+
+.stay-calc {
+  font-size: 0.88rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Formular Felder */
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.4rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  background: #ffffff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(45, 90, 67, 0.12);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.form-checkbox-label input {
+  margin-top: 0.2rem;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.form-help-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+/* Smartphone Kalender Export Box (Option 1) */
+.host-quick-sync-box {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fffdf8;
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+}
+
+.host-quick-sync-box strong {
+  display: block;
+  color: var(--color-accent);
+  margin-bottom: 0.3rem;
+}
+
+.sync-ics-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+/* Responsives Verhalten */
+@media (max-width: 992px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .inquiry-card {
+    position: static;
+  }
+}
