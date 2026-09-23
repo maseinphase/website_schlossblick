@@ -482,11 +482,11 @@
           </div>
           <div class="gallery-item" data-category="garten" data-caption="Sonniger Sitzbereich auf der Terrasse">
             <img src="/images/terrasse-loungemoebel.jpg" alt="Terrasse mit Gartenmöbeln" loading="lazy">
-            <div class="gallery-overlay"><span class="gallery-caption">Sitzplatz im Grünen</span></div>
+            <div class="gallery-overlay"><span class="gallery-caption">Im Grünen</span></div>
           </div>
-          <div class="gallery-item" data-category="garten" data-caption="Blick in den blühenden Garten">
-            <img src="/images/garten-blumenbeet.jpg" alt="Blühender Garten" loading="lazy">
-            <div class="gallery-overlay"><span class="gallery-caption">Garten-Idylle</span></div>
+          <div class="gallery-item" data-category="garten" data-caption="Der Parkplatz befindet sich unmittelbar vor dem Haus">
+            <img src="/images/garten-blumenbeet.jpg" alt="Parkplatz vor dem Haus" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-caption">Parkplatz vor dem Haus</span></div>
           </div>
           <div class="gallery-item" data-category="garten" data-caption="Idyllischer Sitzplatz im Grünen">
             <img src="/images/garten-sitzplatz.jpg" alt="Sitzplatz im Garten" loading="lazy">
@@ -544,9 +544,9 @@
             <img src="/images/umgebung-thueringer-wald.jpg" alt="Wanderwege im Thüringer Wald" loading="lazy">
             <div class="gallery-overlay"><span class="gallery-caption">Wanderparadies Thüringen</span></div>
           </div>
-          <div class="gallery-item" data-category="umgebung" data-caption="Abendstimmung über den Hügeln von Eisfeld">
-            <img src="/images/umgebung-sonnenuntergang.jpg" alt="Sonnenuntergang in den Bergen" loading="lazy">
-            <div class="gallery-overlay"><span class="gallery-caption">Abendstimmung</span></div>
+          <div class="gallery-item" data-category="umgebung" data-caption="Abendstimmung mit Blick auf das Schloss Eisfeld">
+            <img src="/images/umgebung-sonnenuntergang.jpg" alt="Sonnenuntergang mit Schlossblick" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-caption">Abendstimmung mit Schlossblick</span></div>
           </div>
         </div>
       </div>
@@ -576,8 +576,17 @@
           </p>
         </div>
 
+        <div class="destination-filter" role="tablist" aria-label="Ausflugsziele filtern">
+          <button class="filter-btn dest-filter-btn active" data-filter="all" type="button">Alle Ausflugsziele</button>
+          <button class="filter-btn dest-filter-btn" data-filter="natur" type="button">Natur & Wandern</button>
+          <button class="filter-btn dest-filter-btn" data-filter="kultur" type="button">Burgen & Kultur</button>
+          <button class="filter-btn dest-filter-btn" data-filter="wellness" type="button">Wellness & Entspannung</button>
+          <button class="filter-btn dest-filter-btn" data-filter="aktiv" type="button">Aktiv & Freizeit</button>
+        </div>
+
         <div class="surroundings-grid">
-          <div class="destination-card">
+          <!-- 1. Schloss Eisfeld -->
+          <div class="destination-card" data-category="kultur">
             <div class="destination-img-wrap">
               <img src="/images/destinations/schloss-eisfeld.jpg" alt="Schloss Eisfeld in Thüringen" class="destination-img" loading="lazy">
               <a href="https://commons.wikimedia.org/wiki/File:Schloss,_von_Westen_Eisfeld_20180222_001.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Tilman2007 (CC BY-SA 4.0)">
@@ -605,7 +614,8 @@
             </div>
           </div>
 
-          <div class="destination-card">
+          <!-- 2. Veste Coburg -->
+          <div class="destination-card" data-category="kultur">
             <div class="destination-img-wrap">
               <img src="/images/destinations/veste-coburg.jpg" alt="Veste Coburg Luftbild" class="destination-img" loading="lazy">
               <a href="https://commons.wikimedia.org/wiki/File:Veste_Coburg_Luftbild-20240811-RM-162430.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Reinhold Möller (CC BY-SA 4.0)">
@@ -633,7 +643,182 @@
             </div>
           </div>
 
-          <div class="destination-card">
+          <!-- 3. ThermeNatur Bad Rodach -->
+          <div class="destination-card" data-category="wellness">
+            <div class="destination-img-wrap">
+              <img src="/images/destinations/therme-bad-rodach.jpg" alt="ThermeNatur Bad Rodach Außenansicht" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Bad_Rodach_ThermeNatur.JPG" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Presse03 (CC BY-SA 3.0)">
+                📷 Presse03 · CC BY-SA 3.0
+              </a>
+            </div>
+            <div class="destination-body">
+              <div class="destination-header">
+                <h3 class="destination-title">
+                  <a href="https://www.therme-natur.de/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    ThermeNatur Bad Rodach ↗
+                  </a>
+                </h3>
+                <span class="destination-distance">19 km · 20 Min</span>
+              </div>
+              <p class="destination-desc">
+                Staatlich anerkannte Heilquellenlandschaft mit 1.000 m² Wasserfläche, großzügiger Saunawelt und Wellness-Oase. 
+                Perfekt für einen erholsamen Verwöhntag nach einer ausgedehnten Wanderung.
+              </p>
+              <div class="destination-footer">
+                <a href="https://www.therme-natur.de/" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  ThermeNatur Bad Rodach besuchen &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Bleßberg Aussichtsturm -->
+          <div class="destination-card" data-category="natur">
+            <div class="destination-img-wrap">
+              <img src="/images/destinations/blessberg-aussichtsturm.jpg" alt="Aussichtsturm auf dem Bleßberg" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Ble%C3%9Fberg_Aussichtsturm.JPG" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Presse03 (CC BY-SA 3.0)">
+                📷 Presse03 · CC BY-SA 3.0
+              </a>
+            </div>
+            <div class="destination-body">
+              <div class="destination-header">
+                <h3 class="destination-title">
+                  <a href="https://www.stadt-eisfeld.de/tourismus-freizeit/ausflugsziele/blessberg/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    Bleßberg Aussichtsturm ↗
+                  </a>
+                </h3>
+                <span class="destination-distance">12 km · 15 Min</span>
+              </div>
+              <p class="destination-desc">
+                Mit 867 m Höhe einer der markantesten Berge des Thüringer Schiefergebirges. 
+                Der Aussichtsturm bietet bei klarer Sicht ein atemberaubendes Panorama bis zur Rhön und zum Fichtelgebirge.
+              </p>
+              <div class="destination-footer">
+                <a href="https://www.stadt-eisfeld.de/tourismus-freizeit/ausflugsziele/blessberg/" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  Ausflugsziel Bleßberg entdecken &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Veste Heldburg -->
+          <div class="destination-card" data-category="kultur">
+            <div class="destination-img-wrap">
+              <img src="/images/destinations/veste-heldburg.jpg" alt="Veste Heldburg Luftbild" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Veste_Heldburg_Luftbild-20240811-RM-170830.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Reinhold Möller (CC BY-SA 4.0)">
+                📷 Reinhold Möller · CC BY-SA 4.0
+              </a>
+            </div>
+            <div class="destination-body">
+              <div class="destination-header">
+                <h3 class="destination-title">
+                  <a href="https://deutsches-burgenmuseum.de/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    Veste Heldburg (Burgenmuseum) ↗
+                  </a>
+                </h3>
+                <span class="destination-distance">30 km · 30 Min</span>
+              </div>
+              <p class="destination-desc">
+                Die „Fränkische Leuchte“ thront weithin sichtbar auf einem Vulkankegel und beherbergt das renommierte 
+                Deutsche Burgenmuseum mit faszinierenden Einblicken in das mittelalterliche Burgleben.
+              </p>
+              <div class="destination-footer">
+                <a href="https://deutsches-burgenmuseum.de/" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  Deutsches Burgenmuseum entdecken &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Talsperre Ratscher -->
+          <div class="destination-card" data-category="aktiv natur">
+            <div class="destination-img-wrap">
+              <img src="/images/destinations/talsperre-ratscher.jpg" alt="Talsperre Ratscher Bergsee" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Ratscher-Talsperre.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: ProfessorX (CC BY-SA 3.0)">
+                📷 ProfessorX · CC BY-SA 3.0
+              </a>
+            </div>
+            <div class="destination-body">
+              <div class="destination-header">
+                <h3 class="destination-title">
+                  <a href="https://www.bergsee-ratscher.de/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    Talsperre Ratscher (Bergsee) ↗
+                  </a>
+                </h3>
+                <span class="destination-distance">15 km · 15 Min</span>
+              </div>
+              <p class="destination-desc">
+                Sommervergnügen pur: Badesee mit Sandstrand, Riesenrutsche, Stand-up-Paddling, Bootsverleih und 
+                Rundwanderweg. Ideal zum Erfrischen, Sonnenbaden und Picknicken.
+              </p>
+              <div class="destination-footer">
+                <a href="https://www.bergsee-ratscher.de/" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  Freizeitoase Bergsee Ratscher &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Werraquelle & Rennsteig -->
+          <div class="destination-card" data-category="natur">
+            <div class="destination-img-wrap">
+              <img src="/images/destinations/werraquelle-fehrenbach.jpg" alt="Werraquelle bei Fehrenbach am Rennsteig" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Werraquelle_Fehrenbach.JPG" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Störfix (CC BY-SA 3.0 DE)">
+                📷 Störfix · CC BY-SA 3.0 DE
+              </a>
+            </div>
+            <div class="destination-body">
+              <div class="destination-header">
+                <h3 class="destination-title">
+                  <a href="https://www.thueringer-wald.com/urlaub-buchen/poi/werraquelle-fehrenbach-2" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    Werraquelle & Rennsteig ↗
+                  </a>
+                </h3>
+                <span class="destination-distance">16 km · 18 Min</span>
+              </div>
+              <p class="destination-desc">
+                Idyllisch eingefasste Quelle des Flusses Werra am Rennsteig nahe Fehrenbach. 
+                Umgeben von Bergmischwäldern ist dies ein idealer Startpunkt für Wanderungen auf dem berühmten Höhenweg.
+              </p>
+              <div class="destination-footer">
+                <a href="https://www.thueringer-wald.com/urlaub-buchen/poi/werraquelle-fehrenbach-2" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  Werraquelle & Rennsteig erkunden &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Mittelalterstadt Seßlach -->
+          <div class="destination-card" data-category="kultur">
+            <div class="destination-img-wrap">
+              <img src="/images/destinations/sesslach-altstadt.jpg" alt="Historische Altstadt Seßlach Luftbild" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Se%C3%9Flach_Luftbild-20240811-RM-164746.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Reinhold Möller (CC BY-SA 4.0)">
+                📷 Reinhold Möller · CC BY-SA 4.0
+              </a>
+            </div>
+            <div class="destination-body">
+              <div class="destination-header">
+                <h3 class="destination-title">
+                  <a href="https://www.sesslach.de/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    Fachwerkstadt Seßlach ↗
+                  </a>
+                </h3>
+                <span class="destination-distance">33 km · 30 Min</span>
+              </div>
+              <p class="destination-desc">
+                Das „fränkische Rothenburg“ verzaubert mit vollständig erhaltener Stadtmauer, drei historischen Stadttoren, 
+                Kopfsteinpflastergassen und traditionellen Kommunbrauhäusern für fränkische Gemütlichkeit.
+              </p>
+              <div class="destination-footer">
+                <a href="https://www.sesslach.de/" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  Mittelalterstadt Seßlach entdecken &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. Skiarena Silbersattel -->
+          <div class="destination-card" data-category="aktiv">
             <div class="destination-img-wrap">
               <img src="/images/destinations/skiarena-silbersattel.jpg" alt="Skiarena Silbersattel Steinach" class="destination-img" loading="lazy">
               <a href="https://commons.wikimedia.org/wiki/File:Skiarena-silbersattel.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: Sgrossert (CC BY-SA 3.0)">
@@ -661,29 +846,30 @@
             </div>
           </div>
 
-          <div class="destination-card">
+          <!-- 10. Deutsches Spielzeugmuseum Sonneberg -->
+          <div class="destination-card" data-category="aktiv kultur">
             <div class="destination-img-wrap">
-              <img src="/images/destinations/talsperre-ratscher.jpg" alt="Talsperre Ratscher Bergsee" class="destination-img" loading="lazy">
-              <a href="https://commons.wikimedia.org/wiki/File:Ratscher-Talsperre.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: ProfessorX (CC BY-SA 3.0)">
-                📷 ProfessorX · CC BY-SA 3.0
+              <img src="/images/destinations/spielzeugmuseum-sonneberg.jpg" alt="Deutsches Spielzeugmuseum Sonneberg" class="destination-img" loading="lazy">
+              <a href="https://commons.wikimedia.org/wiki/File:Deutsches_Spielzeugmuseum_Sonneberg_-_Schauseite.jpg" target="_blank" rel="noopener noreferrer" class="destination-attribution-badge" title="Bilddetails & Lizenz: ErwinMeier (CC BY-SA 4.0)">
+                📷 ErwinMeier · CC BY-SA 4.0
               </a>
             </div>
             <div class="destination-body">
               <div class="destination-header">
                 <h3 class="destination-title">
-                  <a href="https://www.bergsee-ratscher.de/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
-                    Talsperre Ratscher (Bergsee) ↗
+                  <a href="https://spielzeugmuseum-sonneberg.de/" target="_blank" rel="noopener noreferrer" class="destination-title-link">
+                    Spielzeugmuseum Sonneberg ↗
                   </a>
                 </h3>
-                <span class="destination-distance">15 km · 15 Min</span>
+                <span class="destination-distance">24 km · 25 Min</span>
               </div>
               <p class="destination-desc">
-                Sommervergnügen pur: Badesee mit Sandstrand, Riesenrutsche, Stand-up-Paddling, Bootsverleih und 
-                Rundwanderweg. Ideal zum Erfrischen, Sonnen und Picknicken.
+                Eines der ältesten und bedeutendsten Spezialmuseen Deutschlands. Erleben Sie die Geschichte der 
+                traditionsreichen Spielzeugherstellung mit der weltberühmten Schaugruppe „Thüringer Kirmes“.
               </p>
               <div class="destination-footer">
-                <a href="https://www.bergsee-ratscher.de/" target="_blank" rel="noopener noreferrer" class="destination-link">
-                  Freizeitoase Bergsee Ratscher &rarr;
+                <a href="https://spielzeugmuseum-sonneberg.de/" target="_blank" rel="noopener noreferrer" class="destination-link">
+                  Deutsches Spielzeugmuseum besuchen &rarr;
                 </a>
               </div>
             </div>

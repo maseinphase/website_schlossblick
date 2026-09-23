@@ -823,6 +823,14 @@ ul, ol {
 /* --------------------------------------------------------------------------
    Lage & Umgebung
    -------------------------------------------------------------------------- */
+.destination-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2.5rem;
+}
+
 .surroundings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

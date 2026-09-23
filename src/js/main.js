@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollSpy();
   initGalleryLightbox();
+  initDestinationFilter();
   initCalendar();
   initSmoothScroll();
   updateDynamicContent();
@@ -221,4 +222,33 @@ function initSmoothScroll() {
 function updateDynamicContent() {
   const yearEl = document.getElementById('current-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+/**
+ * Ausflugsziele: Filterung nach Themenkategorien
+ */
+function initDestinationFilter() {
+  const filterBtns = document.querySelectorAll('.dest-filter-btn');
+  const destCards = document.querySelectorAll('.destination-card');
+
+  if (!filterBtns.length || !destCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      destCards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        const categories = cat.split(/\s+/);
+        if (filter === 'all' || categories.includes(filter)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 }
