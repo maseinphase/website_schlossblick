@@ -835,21 +835,71 @@ ul, ol {
   overflow: hidden;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
 }
 
 .destination-card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.destination-img-wrap {
+  position: relative;
+  height: 190px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #24332b;
 }
 
 .destination-img {
-  height: 180px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destination-card:hover .destination-img {
+  transform: scale(1.05);
+}
+
+.destination-attribution-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(15, 23, 20, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  z-index: 2;
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.destination-attribution-badge:hover {
+  background: rgba(15, 23, 20, 0.92);
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .destination-body {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .destination-header {
@@ -867,6 +917,16 @@ ul, ol {
   color: var(--color-primary);
   min-width: 0;
   margin: 0;
+}
+
+.destination-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.destination-title-link:hover {
+  color: var(--color-accent);
 }
 
 .destination-distance {
@@ -888,6 +948,29 @@ ul, ol {
   font-size: 0.92rem;
   color: var(--color-text-muted);
   line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.destination-footer {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.destination-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.destination-link:hover {
+  color: var(--color-accent);
+  transform: translateX(3px);
 }
 
 /* --------------------------------------------------------------------------
