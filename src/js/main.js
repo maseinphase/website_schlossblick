@@ -1,18 +1,39 @@
 /**
  * Ferienwohnung Schlossblick - Haupt-Interaktionsskript
- * Steuerung von Navigation, Filtergalerie, Lightbox und Kalender.
+ * Steuerung von Navigation, Filtergalerie, Lightbox, Scrollspy und Kalender.
  */
 
 import { BookingCalendar } from './calendar.js';
 import { CONFIG } from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeaderScroll();
   initMobileMenu();
+  initScrollSpy();
   initGalleryLightbox();
   initCalendar();
   initSmoothScroll();
   updateDynamicContent();
 });
+
+/**
+ * Header Schatten bei Scroll
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
 /**
  * Mobile Navigation (Hamburger Menu)
@@ -35,6 +56,39 @@ function initMobileMenu() {
       menuBtn.setAttribute('aria-expanded', 'false');
     });
   });
+}
+
+/**
+ * Scrollspy: Hebt den aktiven Menüpunkt beim Scrollen hervor
+ */
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(sec => observer.observe(sec));
 }
 
 /**
@@ -148,7 +202,10 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      if (targetId === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();

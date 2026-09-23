@@ -57,6 +57,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -211,23 +212,28 @@ ul, ol {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-border-light);
-  transition: all var(--transition-fast);
+  transition: box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(31, 39, 35, 0.08);
 }
 
 .nav-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   height: 80px;
 }
 
 .brand-link {
   display: flex;
   flex-direction: column;
+  justify-self: start;
 }
 
 .brand-title {
@@ -250,7 +256,9 @@ ul, ol {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  justify-content: center;
+  gap: 1.8rem;
+  justify-self: center;
 }
 
 .nav-link {
@@ -259,9 +267,11 @@ ul, ol {
   color: var(--color-text-main);
   padding: 0.4rem 0;
   position: relative;
+  white-space: nowrap;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--color-primary);
 }
 
@@ -276,14 +286,17 @@ ul, ol {
   transition: width var(--transition-fast);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
 .nav-cta {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1rem;
+  justify-self: end;
 }
 
 .mobile-menu-btn {
@@ -427,16 +440,19 @@ ul, ol {
 
 .hero-floating-badge {
   position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background: #ffffff;
-  padding: 1.2rem 1.5rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.1rem 1.4rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 2;
 }
 
 .floating-score {
@@ -1069,6 +1085,20 @@ ul, ol {
    Responsive Breakpoints
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links, .nav-cta .btn {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1100,16 +1130,6 @@ ul, ol {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-}
-
-@media (max-width: 768px) {
-  .nav-links, .nav-cta .btn {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-  }
 
   /* Mobile Dropdown Menu */
   .mobile-nav {
@@ -1137,3 +1157,4 @@ ul, ol {
     padding: 0.6rem 0;
   }
 }
+

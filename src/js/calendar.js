@@ -308,6 +308,22 @@ export class BookingCalendar {
     if (inputStart && this.selectedStart) inputStart.value = this.formatDateISO(this.selectedStart);
     if (inputEnd && this.selectedEnd) inputEnd.value = this.formatDateISO(this.selectedEnd);
 
+    // Reset Button steuern
+    const resetBtn = document.getElementById('reset-dates-btn');
+    if (resetBtn) {
+      if (this.selectedStart || this.selectedEnd) {
+        resetBtn.style.display = 'inline-block';
+        resetBtn.onclick = () => {
+          this.selectedStart = null;
+          this.selectedEnd = null;
+          this.render();
+          this.updateInquiryForm();
+        };
+      } else {
+        resetBtn.style.display = 'none';
+      }
+    }
+
     if (this.selectedStart && this.selectedEnd) {
       const diffTime = Math.abs(this.selectedEnd - this.selectedStart);
       const nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -322,6 +338,8 @@ export class BookingCalendar {
     } else {
       if (nightsEl) nightsEl.textContent = '–';
       if (priceEl) priceEl.textContent = `${CONFIG.pricing.basePricePerNight} € / Nacht`;
+      const exportBtn = document.getElementById('host-export-ics-btn');
+      if (exportBtn) exportBtn.style.display = 'none';
     }
   }
 
@@ -438,3 +456,4 @@ export class BookingCalendar {
     };
   }
 }
+

@@ -330,9 +330,16 @@
           <button class="filter-btn" data-filter="kueche-bad">Küche & Bad</button>
           <button class="filter-btn" data-filter="garten">Garten & Terrasse</button>
           <button class="filter-btn" data-filter="umgebung">Umgebung & Winter</button>
+          <button class="filter-btn" data-filter="grundriss">Grundriss</button>
         </div>
 
         <div class="gallery-grid" id="gallery-grid">
+          <!-- Grundriss -->
+          <div class="gallery-item" data-category="grundriss" data-caption="Grundriss der Ferienwohnung Schlossblick – 48 m² im Erdgeschoss mit separatem Eingang">
+            <img src="/images/grundriss.jpg" alt="Grundriss der Ferienwohnung Schlossblick" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-caption">Grundriss (48 m²)</span></div>
+          </div>
+
           <!-- Garten & Terrasse -->
           <div class="gallery-item" data-category="garten" data-caption="Gepflegter Garten und Terrasse mit herrlichem Schlossblick">
             <img src="/images/garten-terrasse-hauptansicht.jpg" alt="Garten und Terrasse" loading="lazy">
@@ -345,6 +352,10 @@
           <div class="gallery-item" data-category="garten" data-caption="Blick in den blühenden Garten">
             <img src="/images/garten-blumenbeet.jpg" alt="Blühender Garten" loading="lazy">
             <div class="gallery-overlay"><span class="gallery-caption">Garten-Idylle</span></div>
+          </div>
+          <div class="gallery-item" data-category="garten" data-caption="Idyllischer Sitzplatz im Grünen">
+            <img src="/images/garten-sitzplatz.jpg" alt="Sitzplatz im Garten" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-caption">Sitzplatz im Grünen</span></div>
           </div>
 
           <!-- Wohnbereich -->
@@ -371,6 +382,10 @@
           <div class="gallery-item" data-category="kueche-bad" data-caption="Voll ausgestattete Küchenzeile mit Geschirrspüler und Herd">
             <img src="/images/kueche-zeile.jpg" alt="Voll ausgestattete Küche" loading="lazy">
             <div class="gallery-overlay"><span class="gallery-caption">Küche mit Geschirrspüler</span></div>
+          </div>
+          <div class="gallery-item" data-category="kueche-bad" data-caption="Küche im Detail mit Kaffeemaschine, Wasserkocher und Zubehör">
+            <img src="/images/kueche-detail.jpg" alt="Küche Details" loading="lazy">
+            <div class="gallery-overlay"><span class="gallery-caption">Kaffee- & Kochstation</span></div>
           </div>
           <div class="gallery-item" data-category="kueche-bad" data-caption="Modernes Badezimmer mit ebenerdiger Dusche">
             <img src="/images/bad-dusche.jpg" alt="Badezimmer mit Dusche" loading="lazy">
@@ -478,6 +493,12 @@
               </p>
             </div>
           </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="https://maps.google.com/?q=Unterm+Heinig+20,+98673+Eisfeld" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            📍 Unterm Heinig 20, 98673 Eisfeld – Route in Google Maps planen &rarr;
+          </a>
         </div>
       </div>
     </section>
@@ -642,8 +663,8 @@
                 </div>
               </div>
               <div class="stay-calc">
-                <span>Dauer:</span>
-                <span id="inquiry-nights-count">–</span>
+                <span>Dauer: <strong id="inquiry-nights-count">–</strong></span>
+                <button type="button" id="reset-dates-btn" class="reset-dates-btn" style="display: none;" title="Auswahl aufheben">✕ Auswahl aufheben</button>
               </div>
             </div>
 
@@ -771,3 +792,4 @@
   <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>
+

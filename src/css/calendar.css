@@ -335,6 +335,24 @@
   border-top: 1px dashed var(--color-border);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.reset-dates-btn {
+  font-size: 0.78rem;
+  color: #c94a4a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.reset-dates-btn:hover {
+  color: #a72828;
+  background: rgba(201, 74, 74, 0.08);
 }
 
 /* Formular Felder */
@@ -441,3 +459,4 @@
     position: static;
   }
 }
+
