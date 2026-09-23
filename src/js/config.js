@@ -13,7 +13,7 @@ export const CONFIG = {
     city: "Eisfeld",
     state: "Thüringen",
     country: "Deutschland",
-    googleMapsUrl: "https://maps.google.com/?q=Unterm+Heinig+20,+98673+Eisfeld"
+    googleMapsUrl: "https://maps.app.goo.gl/tZxbiFLTQqEKthy59"
   },
 
   // Kontaktdaten der Vermieter (Eltern)
