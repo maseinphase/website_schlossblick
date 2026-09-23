@@ -1,0 +1,7 @@
+# robots.txt für Fewo Schlossblick (Eisfeld)
+User-agent: *
+Allow: /
+
+# XML-Sitemap für Suchmaschinen
+Sitemap: https://www.fewo-schlossblick.de/sitemap.xml
+
