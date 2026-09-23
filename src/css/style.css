@@ -868,18 +868,18 @@ ul, ol {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: rgba(15, 23, 20, 0.72);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(15, 23, 20, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.72rem;
-  padding: 0.2rem 0.55rem;
+  padding: 0.22rem 0.6rem;
   border-radius: var(--radius-full);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   transition: background var(--transition-fast), color var(--transition-fast);
   z-index: 2;
   max-width: 90%;
@@ -889,7 +889,7 @@ ul, ol {
 }
 
 .destination-attribution-badge:hover {
-  background: rgba(15, 23, 20, 0.92);
+  background: rgba(15, 23, 20, 0.8);
   color: #ffffff;
   text-decoration: underline;
 }
