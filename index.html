@@ -671,30 +671,28 @@
               <input type="hidden" id="form-checkin" name="checkin">
               <input type="hidden" id="form-checkout" name="checkout">
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="form-name">Ihr Name *</label>
-                  <input type="text" id="form-name" class="form-input" placeholder="z. B. Max Mustermann" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="form-guests">Gäste *</label>
-                  <select id="form-guests" class="form-select" required>
-                    <option value="1 Erwachsener">1 Erwachsener</option>
-                    <option value="2 Erwachsene" selected>2 Erwachsene</option>
-                    <option value="3 Personen (mit Schlafcouch)">3 Personen (mit Couch)</option>
-                  </select>
-                </div>
+              <div class="form-group">
+                <label class="form-label" for="form-name">Ihr Name *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="z. B. Max Mustermann" required>
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="form-email">E-Mail-Adresse *</label>
-                  <input type="email" id="form-email" class="form-input" placeholder="ihre.mail@beispiel.de" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="form-phone">Telefonnummer</label>
-                  <input type="tel" id="form-phone" class="form-input" placeholder="+49 170 1234567">
-                </div>
+              <div class="form-group">
+                <label class="form-label" for="form-guests">Anzahl der Gäste *</label>
+                <select id="form-guests" class="form-select" required>
+                  <option value="1 Erwachsener">1 Erwachsener</option>
+                  <option value="2 Erwachsene" selected>2 Erwachsene</option>
+                  <option value="3 Personen (mit Schlafcouch)">3 Personen (mit Couch)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-email">E-Mail-Adresse *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="ihre.mail@beispiel.de" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-phone">Telefonnummer (optional)</label>
+                <input type="tel" id="form-phone" class="form-input" placeholder="+49 170 1234567">
               </div>
 
               <div class="form-group">
