@@ -421,33 +421,6 @@
   margin-top: 0.8rem;
 }
 
-/* Smartphone Kalender Export Box (Option 1) */
-.host-quick-sync-box {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #fffdf8;
-  border: 1px dashed var(--color-accent);
-  border-radius: var(--radius-md);
-  font-size: 0.84rem;
-}
-
-.host-quick-sync-box strong {
-  display: block;
-  color: var(--color-accent);
-  margin-bottom: 0.3rem;
-}
-
-.sync-ics-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--color-accent);
-  font-weight: 600;
-  text-decoration: underline;
-  margin-top: 0.4rem;
-  cursor: pointer;
-}
-
 /* Responsives Verhalten */
 @media (max-width: 992px) {
   .booking-layout {

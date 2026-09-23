@@ -332,14 +332,9 @@ export class BookingCalendar {
 
       const total = nights * CONFIG.pricing.basePricePerNight;
       if (priceEl) priceEl.textContent = `ca. ${total} € (Endreinigung inklusive)`;
-
-      // Option 1 Sync-Link aktivieren
-      this.updateIcsExportLink();
     } else {
       if (nightsEl) nightsEl.textContent = '–';
       if (priceEl) priceEl.textContent = `${CONFIG.pricing.basePricePerNight} € / Nacht`;
-      const exportBtn = document.getElementById('host-export-ics-btn');
-      if (exportBtn) exportBtn.style.display = 'none';
     }
   }
 
@@ -355,58 +350,6 @@ export class BookingCalendar {
     const m = String(date.getMonth() + 1).padStart(2, '0');
     const y = date.getFullYear();
     return `${y}-${m}-${d}`;
-  }
-
-  /**
-   * Option 1 Feature: Erzeugt eine .ics-Datei zum 1-Klick-Import in den
-   * Smartphone-Kalender der Eltern (Google / Apple / Outlook).
-   * Dadurch blockiert Booking.com diesen Zeitraum danach automatisch!
-   */
-  updateIcsExportLink() {
-    const exportBtn = document.getElementById('host-export-ics-btn');
-    if (!exportBtn || !this.selectedStart || !this.selectedEnd) return;
-
-    exportBtn.style.display = 'inline-flex';
-    exportBtn.onclick = (e) => {
-      e.preventDefault();
-      this.downloadIcsFile();
-    };
-  }
-
-  downloadIcsFile() {
-    const startIso = this.formatDateISO(this.selectedStart).replace(/-/g, '');
-    const endIso = this.formatDateISO(this.selectedEnd).replace(/-/g, '');
-    const nowIso = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-
-    const guestNameInput = document.getElementById('form-name');
-    const guestName = guestNameInput && guestNameInput.value ? guestNameInput.value : 'Gast';
-
-    const icsString = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Fewo Schlossblick Eisfeld//Buchungskalender//DE',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      `UID:fewo-${Date.now()}@fewo-schlossblick.de`,
-      `DTSTAMP:${nowIso}`,
-      `DTSTART;VALUE=DATE:${startIso}`,
-      `DTEND;VALUE=DATE:${endIso}`,
-      `SUMMARY:Fewo Schlossblick: ${guestName}`,
-      `DESCRIPTION:Buchung für ${guestName}\\nAdresse: Unterm Heinig 20, 98673 Eisfeld\\nAutomatisch blockiert auf Booking.com via Kalender-Import.`,
-      `LOCATION:Unterm Heinig 20, 98673 Eisfeld`,
-      'STATUS:CONFIRMED',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].join('\r\n');
-
-    const blob = new Blob([icsString], { type: 'text/calendar;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', `fewo-buchung-${startIso}-${endIso}.ics`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   }
 
   initFormListeners() {
