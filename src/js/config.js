@@ -29,9 +29,9 @@ export const CONFIG = {
   // Eckdaten der Ferienwohnung
   details: {
     size: "48 m²",
-    maxGuests: 3,
+    maxGuests: 2,
     rooms: "2 Zimmer (1 Schlafzimmer, 1 Wohnzimmer)",
-    beds: "1 Doppelbett (180x200cm), 1 bequeme Schlafcouch",
+    beds: "1 komfortables Doppelbett (180x200cm)",
     bathroom: "Modernes Bad mit ebenerdiger Dusche & WC",
     floor: "Erdgeschoss mit separatem Eingang",
     outdoor: "Eigene Terrasse & sonniger Garten mit Grill",
@@ -43,8 +43,8 @@ export const CONFIG = {
 
   // Richtpreise für Direktbuchungen (oft 10-15% günstiger als Booking.com)
   pricing: {
-    basePricePerNight: 65, // Richtwert pro Nacht für 2 Personen
-    extraPersonPerNight: 15,
+    basePricePerNight: 65, // Richtwert pro Nacht für bis zu 2 Personen
+    extraPersonPerNight: 0,
     finalCleaning: 0, // Inklusive
     minStayNights: 2,
     currency: "€",
