@@ -18,7 +18,7 @@ export const CONFIG = {
 
   // Kontaktdaten der Vermieter (Eltern)
   contact: {
-    name: "Familie Seifert", // Platzhalter / anpassbar
+    name: "Gerdrun & Wolfram Seeland", // Vermieter
     phone: "+49 (0) 3686 123456", // Platzhalter für Eltern
     phoneFormatted: "+493686123456",
     email: "kontakt@fewo-schlossblick.de",

@@ -371,7 +371,7 @@ export class BookingCalendar {
 
       const subject = encodeURIComponent(`Buchungsanfrage Fewo Schlossblick: ${this.formatDateDE(this.selectedStart)} bis ${this.formatDateDE(this.selectedEnd)}`);
       const body = encodeURIComponent(
-        `Guten Tag Familie Seifert,\n\n` +
+        `Guten Tag Familie Seeland,\n\n` +
         `ich interessiere mich für Ihre Ferienwohnung Schlossblick in Eisfeld:\n\n` +
         `• Anreise: ${this.formatDateDE(this.selectedStart)}\n` +
         `• Abreise: ${this.formatDateDE(this.selectedEnd)}\n` +
