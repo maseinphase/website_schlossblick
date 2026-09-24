@@ -34,3 +34,8 @@ Thumbs.db
 .cloudflare/
 .vercel/
 
+# Private & internal files (not for public repo)
+HOSTING_LEITFADEN.md
+README.md
+booking.com_resources/
+
