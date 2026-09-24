@@ -43,7 +43,7 @@ export const CONFIG = {
 
   // Richtpreise für Direktbuchungen (oft 10-15% günstiger als Booking.com)
   pricing: {
-    basePricePerNight: 65, // Richtwert pro Nacht für bis zu 2 Personen
+    basePricePerNight: 80, // Richtwert pro Nacht für bis zu 2 Personen
     extraPersonPerNight: 0,
     finalCleaning: 0, // Inklusive
     minStayNights: 2,
