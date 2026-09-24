@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && npx wrangler pages deploy dist --project-name fewo-schlossblick"
+    "deploy": "vite build && npx wrangler pages deploy dist --project-name fewo-schlossblick",
+    "push:github": "./scripts/sync-github.sh"
   },
   "devDependencies": {
     "vite": "^8.3.0"
